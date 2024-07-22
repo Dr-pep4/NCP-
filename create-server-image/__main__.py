@@ -32,10 +32,6 @@ def create_server_image(instance_id, access_key, secret_key, server_name):
         'x-ncp-iam-access-key': access_key,
     }
     response = requests.get(api_server + uri, headers=http_header)
-   
-
-
-
     root = ET.fromstring(response.text)
 
 # 필요한 정보 추출
@@ -78,6 +74,4 @@ def main(args):
     result = create_server_image(instance_id_to_create_image, access_key, secret_key, server_name)
     
     print(result)
-
-if __name__ == "__main__":
-    main(None)
+    return(result)
